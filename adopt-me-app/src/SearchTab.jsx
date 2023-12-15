@@ -7,7 +7,7 @@ const SearchTab = () => {
     const [movieName, setMovieName] = useState("");
     const [typeOfMovie, setTypeOfMovie] = useState("");
     const [movie, setMovie] = useState([]);
-    
+
     useEffect(() => {
             requestMovie();
         // eslint-disable-next-line
@@ -19,7 +19,7 @@ const SearchTab = () => {
             );
             const json = await res.json();
             // console.log("Json: " + JSON.stringify(json));
-            setMovie(json)
+            setMovie(json);
     };
 
     return (
