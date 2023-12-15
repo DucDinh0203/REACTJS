@@ -11,7 +11,7 @@ const SearchTab = () => {
     useEffect(() => {
             requestMovie();
         // eslint-disable-next-line
-    }, []); 
+    }, []);
 
     async function requestMovie() {
             const res = await fetch(
@@ -28,11 +28,8 @@ const SearchTab = () => {
                 onSubmit={(e) => {
                     e.preventDefault();
                     if(typeOfMovie){
-                        // console.log("movie lenght: " + movie.length);
                         requestMovie();
                     }
-                    
-                    
                 }}
             >
                 <label htmlFor='movie'>
