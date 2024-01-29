@@ -1,0 +1,21 @@
+.header-container {
+    background: linear-gradient(180deg, #ee8328 0%, #e14318 100%);
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    padding: 20px 0px 0px 0px;
+}
+
+.header-container a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    color: black;
+}
