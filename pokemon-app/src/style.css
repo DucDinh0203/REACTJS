@@ -21,6 +21,7 @@ code {
 :root{
   --mont: 'Montserrat', sans-serif;
   --robo: "Roboto", monospace;
+  --plpn: 'Playpen Sans', cursive;
   --dkblue: #060b28;
   --blue: #0076ff;
   --lgblue: #14abff;
@@ -32,10 +33,11 @@ code {
   --lggray: #9fa39d;
   --pink: #f149ff;
   --steel: #21a1bd;
+  --white: #f3f3f3;
 }
 
 body {
-  background-color: var(--dkblue);
+  background-color: var(--white);
   margin: 0;
   font-family: var(--mont);
 }
