@@ -1,15 +1,21 @@
 .header-container {
-    height: 80px;
-    width: 100%;
-    border-bottom: 2px solid #e5e5e5;
+    border-bottom: 2px solid #e2e2e2;
+}
+
+nav {
+    font-family: var(--plpn);
+    font-size: 90%;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    
 }
 
 nav ul {
     margin: 0;
-    padding: auto 0;
+    padding: 0;
     list-style-type: none;
     display: flex;
-    /* flex-flow: row wrap; */
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     gap: 2rem;
@@ -22,32 +28,31 @@ nav li:first-child {
 
 nav ul li a {
     color: black;
+    font-weight: bolder;
+    font-size: 25px;
     text-decoration: none;
 }
 
-img {
-    width: 6%;
-    height: 6%;
-
+nav ul li a:hover {
+    color: var(--red);
 }
 
-/* img:last-child {
-    width: 20%;
-} */
+img {
+    width: 50px;
+}
 
 span {
-    font-family: var(--plpn);
     font-size: 50px;
-    font-weight: 800;
-    color: var(--yellow);
-    padding-bottom: 5px;
+    font-weight: bolder;
+    padding-left: 10px;
 }
 
 @media (min-width: 850px) {
     nav {
-        max-width: 1200px;
-        margin: 10px 25px;
+        max-width: 100%;
+        margin: 0 6rem;
     }
+
     nav li:first-child {
         flex-basis: auto;
         text-align: left;
