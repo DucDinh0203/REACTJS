@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import poke_logo from '../../asset/image/poke_logo.png';
-import pokeball from '../../asset/image/pokeball.png';
+// import pokeball from '../../asset/image/pokeball.png';
 import './Header.style.css';
 
 const HeaderComponments = () => {
