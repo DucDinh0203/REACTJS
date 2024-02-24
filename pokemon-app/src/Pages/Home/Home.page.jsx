@@ -1,27 +1,33 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Home.style.css';
-import FetchPokemonList from '../../Services/FetchPokemonList';
 import axios from 'axios';
-
+// import FetchPokemonList from '../../Services/FetchPokemonList';
+// import Pokemon from '../../Componments/Pokemon/Pokemon';
+import { useQuery } from "@tanstack/react-query";
+import FetchingPokemonLists from '../../Services/FetchPokemonList';
 
 const HomePage = () => {
-  
-  const URL_LINK = `https://pokeapi.co/api/v2/pokemon?limit=9&offset=0`;
+  // const [pokemons, setPokemons] = useState([]);
+  // const [offset, setOffsets] = useState(9);
 
-  const loadPokemon = async () => {
-    const res = await axios.get(URL_LINK);
-    console.log(res.data.results);
-    
-  }
+  // const requestPokemons = useQuery(["pokemonLists", offset], FetchingPokemonLists);
 
-  useEffect(() => {
-    FetchPokemonList(1);
-    // loadPokemon();
-  }, []);
+
+  // if(requestPokemons.isLoading) {
+  //   return (
+  //     <div>Loading...</div>
+  //   );
+  // }
+
+  // const poke = requestPokemons.data;
+  // console.log("poke: ", poke);
 
   return (
     <div>
         <h1>Home Page</h1>
+        <div>Pokemon List</div>
+        
+
     </div>
   )
 }

@@ -8,10 +8,29 @@ const FetchPokemonList = async (page) => {
     const res = await axios.get(URL_POKEMON_LIST);
     const pokemonList = res.data.results;
     
-    const promise = pokemonList.map (async (pokemon) => {
-        const pokeData = await FetchPokemon(pokemon.name);
-        console.log(pokeData);
-    });
+    // Create an array of promises for fetching each Pokemon's details
+    const promises = pokemonList.map(async (pokemon) => (await FetchPokemon(pokemon.name)));
+    
+    // Wait for all promises to resolve
+    const pokemonData = await Promise.all(promises);
+    console.log(pokemonData);
+    return pokemonData;
 }
 
 export default FetchPokemonList;
+
+const FetchingPokemonLists = async ({queryKey}) => {
+    const {offset} = queryKey[1];
+
+    const res = await axios.get(
+        `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=9`
+    );
+
+    if(!res.ok) {
+        throw new Error(`error fetchingPokemonLists`);
+    }
+
+    return res.data;
+};
+
+export default FetchingPokemonLists;
