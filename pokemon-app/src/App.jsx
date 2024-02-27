@@ -18,7 +18,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
         <Routes>
           <Route path="/" element={<DefaultLayout/>}>
             <Route index element={<HomePage />} />
