@@ -44,7 +44,6 @@ const PokemonName = () => {
           })
         )
       }
-        <div> current page is {page}</div>
         <Stack>
           <Pagination 
             count={10} 

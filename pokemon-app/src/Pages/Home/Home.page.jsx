@@ -1,12 +1,11 @@
 import './Home.style.css';
-import PokemonName from '../../Componments/Pokemon/PokemonName';
+import PokeDex from '../../Componments/Pokemon/PokeDex';
 
 const HomePage = () => {
   
   return (
     <div>
-      <h1>Home Page</h1>
-      <PokemonName/>
+      <PokeDex/>
     </div>
   )
 }
