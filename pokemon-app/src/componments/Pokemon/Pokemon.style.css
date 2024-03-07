@@ -4,6 +4,11 @@
     margin: 100px auto;
 }
 
+.pokemon-link{
+    text-decoration: none;
+    color: #333;
+}
+
 .pokedex-container .pagination{
     display: flex;
     justify-content: center;
@@ -15,15 +20,23 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; /* Creates three columns of equal size */
     gap: 70px 40px; /* Optional: Adds some space between grid items */
+
 }
 
 .pokemon-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid black;
-    border-radius: 14px;
+    /* border: 2px solid black; */
+    border-radius: 15px;
     width: 100%;
+    box-shadow: 5px 5px 20px 5px var(--lggray);
+    cursor: pointer;
+}
+
+.pokemon-container:hover{
+    transform: translateY(-1rem);
+    box-shadow: 0 25px 50px -12px var(--lggray);
 }
 
 .pokemon-container .image-container{
@@ -33,7 +46,6 @@
 .pokemon-container .image-container img {
     display: block;
     width: 60%;
-    margin: 20px 10px;
     margin: 0px auto;
 }
 
@@ -55,4 +67,95 @@
     font-weight: 800;
     text-transform: capitalize;
     padding: 0;
+    text-align: center;
+}
+
+.pokemon-type{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.type-button {
+    margin: 10px;
+    font-family: var(--plpn);
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 15px;
+    font-style: italic;
+    color: white;
+}
+
+.bug {
+    background-color: var(--bug);
+}
+
+.dark{
+    background-color: var(--dark);
+}
+
+.dragon{
+    background-color: var(--dragon);
+}
+
+.electric{
+    background-color: var(--electric);
+}
+
+.fairy{
+    background-color: var(--fairy);
+}
+
+.fighting{
+    background-color: var(--fighting);
+}
+
+.fire{
+    background-color: var(--fire);
+}
+
+.flying{
+    background-color: var(--flying);
+}
+
+.ghost{
+    background-color: var(--ghost);
+}
+
+.grass{
+    background-color: var(--grass);
+}
+
+.ground{
+    background-color: var(--ground);
+}
+
+.ice{
+    background-color: var(--ice);
+}
+
+.normal{
+    background-color: var(--normal);
+}
+
+.poison{
+    background-color: var(--poison);
+}
+
+.psychic{
+    background-color: var(--psychic);
+}
+
+.rock{
+    background-color: var(--rock);
+}
+
+.steel{
+    background-color: var(--steel);
+}
+
+.water{
+    background-color: var(--water);
 }
