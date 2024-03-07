@@ -17,9 +17,9 @@ const HeaderComponments = () => {
                 <span>Pokédex</span>
               </Link>
             </li>
-            {/* <li>
+            <li>
               <Link to="/details">Details</Link>
-            </li> */}
+            </li>
             <li>
               <Link to="/about">About</Link>
             </li>

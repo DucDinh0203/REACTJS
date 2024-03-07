@@ -19,19 +19,18 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-        <Routes>
-          <Route path="/" element={<DefaultLayout/>}>
-            <Route index element={<HomePage />} />
+        <QueryClientProvider client={queryClient}>
+          <Routes>
+            <Route path="/" element={<DefaultLayout/>}/>
+            <Route element={<HomePage />} />
             <Route path="/details/:name" element={<PokemonDetails/>}/>
             <Route path="/about"/>
             <Route path="/contact"/>  
-          </Route>
-
-          <Route path="/login" />
-          <Route path="/register"/>
-        </Routes>
-      </QueryClientProvider>
+            
+            {/* <Route path="/login" />
+            <Route path="/register"/> */}
+          </Routes>
+        </QueryClientProvider>
       </BrowserRouter>
       
     </div>

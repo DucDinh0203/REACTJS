@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 
 const Pokemon = (props) => {
-    const { name, types, id, height, weight } = props
+    const { name, types, id } = props
 
     const ImgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png`;
     
