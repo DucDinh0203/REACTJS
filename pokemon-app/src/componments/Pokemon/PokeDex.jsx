@@ -7,10 +7,11 @@ import './Pokemon.style.css'
 
 
 const PokeDex = () => {
+   
     const [pokemonInfo, setPokemonInfo] = useState([]);
     const [page, setPage] = useState(1);
 
-    const getPokemonInfo = async (page) => {
+    const getPokemonInfo = async () => {
         try {
             const requestPokemonInfo = await FetchPokemonList(page);
             setPokemonInfo(requestPokemonInfo);
@@ -25,8 +26,12 @@ const PokeDex = () => {
     };
 
     useEffect(() => {
-        getPokemonInfo(page);
+        getPokemonInfo();
     }, [page]);
+
+
+    console.log("Render pokemon info", pokemonInfo)
+
 
     return (
         <div className='pokedex-container'>
