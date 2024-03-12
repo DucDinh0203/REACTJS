@@ -1,27 +1,26 @@
 import './Home.style.css';
 import PokeDex from '../../Componments/Pokemon/PokeDex';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
- const Component = () => {
-  const [state, setState] = useState()
+//  const Component = () => {
+//   const [state, setState] = useState()
 
 
-  useEffect(() => {
+//   useEffect(() => {
 
-    console.log("trigger effect")
+//     console.log("trigger effect")
 
-  }, [])
+//   }, [])
 
-  console.log("render", state)
+//   console.log("render", state)
 
-  return <button onClick={() => setState(Math.random())}>Test</button>
- }
+//   return <button onClick={() => setState(Math.random())}>Test</button>
+//  }
 
 const HomePage = () => {
   
   return (
     <div>
-      {/* <Component /> */}
       <PokeDex/>
     </div>
   )

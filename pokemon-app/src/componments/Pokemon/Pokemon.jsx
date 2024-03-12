@@ -12,7 +12,6 @@ const Pokemon = (props) => {
     }
 
     const displayPokemonType = (pokemonTypes) => {
-        console.log("diplay pokemon type: ");
         return pokemonTypes.map((types, index) => {
             // const iconUrl = require(`../../asset/pokemonTypesIcons/${types.type.name}.svg`).default;
             return (
