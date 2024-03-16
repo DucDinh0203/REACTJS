@@ -1,12 +1,10 @@
 import axios from 'axios';
 
-const FetchingPokemonData = async ({queryKey}) => {
+const FetchingPokemonSpecies = async ({queryKey}) => {
     const name = queryKey[1];
 
-    console.log("name in fetching: " + name);
-
     try {
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${name}`);
         console.log("response data: ", response.data);
         return response.data; // axios automatically handles JSON parsing
     } catch (error) {
@@ -15,4 +13,4 @@ const FetchingPokemonData = async ({queryKey}) => {
     }
 }
 
-export default FetchingPokemonData;
+export default FetchingPokemonSpecies;

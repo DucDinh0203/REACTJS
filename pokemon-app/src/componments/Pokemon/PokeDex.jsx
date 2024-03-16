@@ -27,7 +27,8 @@ const PokeDex = () => {
 
     useEffect(() => {
         getPokemonInfo();
-    }, [page]);
+        // eslint-disable-next-line
+    }, [page]); 
 
 
     console.log("Render pokemon info", pokemonInfo)
@@ -39,7 +40,7 @@ const PokeDex = () => {
             <Stack>
                 <Pagination 
                     className='pagination'
-                    count={20} 
+                    count={80} 
                     variant="outlined" 
                     shape="rounded"
                     onChange={handleChange}

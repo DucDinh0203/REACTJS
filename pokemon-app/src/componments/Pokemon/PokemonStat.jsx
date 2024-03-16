@@ -1,7 +1,9 @@
 import React from 'react'
 
-const PokemonStat = () => {
-  return (
+const PokemonStat = (props) => {
+    const {height} = props
+  
+    return (
     <div>PokemonStat</div>
   )
 }
