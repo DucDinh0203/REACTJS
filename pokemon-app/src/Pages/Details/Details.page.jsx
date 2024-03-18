@@ -1,35 +1,15 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
-
 import { useQuery } from "@tanstack/react-query";
 import FetchingPokemonData from '../../Services/FetchingPokemonData';
 import './Details.style.css';
 import HeaderComponments from '../../Componments/Header/Header.componments';
+import PokemonAvatar from '../../Componments/Pokemon/PokemonAvatar';
+import PokemonAbout from '../../Componments/Pokemon/PokemonAbout';
 
 // Pokemon details outline page
 const Details = () => {
     const { name } = useParams();
-    console.log("name in pokemonDetails: ", name);
-    const {data, error, isLoading, isError} = useQuery({
-        queryKey: ["PokemonDetails", name], 
-        queryFn: FetchingPokemonData
-    });
-
-    if (isLoading) {
-        return (
-        <div>
-            Loadinggg...
-        </div>
-        );
-    }
-
-    if (isError) {
-        return (
-        <div>
-            Error: {error.message}
-        </div>
-        )
-    }
 
     return (
         <div className='details'>
@@ -37,9 +17,17 @@ const Details = () => {
                 <HeaderComponments/>
             </header>
             <div className='details-container'>
-                {
-                    `this is the details page of Pokemon ${data.name}`
-                }
+                <PokemonAvatar name={name}/>
+                <PokemonAbout name={name}/>
+                <div className='abilities-container'>
+                    <h1>Abilities</h1>
+                </div>
+                <div className='stats-container'>
+                    <h1>Stats</h1>
+                </div>
+                <div className='evolution-container'>
+                    <h1>Evolution</h1>
+                </div>
             </div>
 
         </div>

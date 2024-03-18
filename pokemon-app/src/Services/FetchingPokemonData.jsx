@@ -3,8 +3,6 @@ import axios from 'axios';
 const FetchingPokemonData = async ({queryKey}) => {
     const name = queryKey[1];
 
-    console.log("name in fetching: " + name);
-
     try {
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
         console.log("response data: ", response.data);

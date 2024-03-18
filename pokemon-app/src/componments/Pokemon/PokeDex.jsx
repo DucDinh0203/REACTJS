@@ -15,7 +15,6 @@ const PokeDex = () => {
         try {
             const requestPokemonInfo = await FetchPokemonList(page);
             setPokemonInfo(requestPokemonInfo);
-            console.log("requestPokemonInfo: ", requestPokemonInfo);
         } catch (error) {
             console.log("Failed to fetch pokemon data: ", error);
         }
@@ -29,10 +28,6 @@ const PokeDex = () => {
         getPokemonInfo();
         // eslint-disable-next-line
     }, [page]); 
-
-
-    console.log("Render pokemon info", pokemonInfo)
-
 
     return (
         <div className='pokedex-container'>

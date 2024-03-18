@@ -37,7 +37,7 @@ nav ul li a:hover {
     color: var(--red);
 }
 
-img {
+.nav-bar img {
     width: 50px;
 }
 

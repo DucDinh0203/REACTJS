@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import poke_logo from '../../asset/image/poke_logo.png';
-// import pokeball from '../../asset/image/pokeball.png';
 import './Header.style.css';
 
 const HeaderComponments = () => {
@@ -14,6 +13,7 @@ const HeaderComponments = () => {
               <Link to="/">
                 {/* <img title='pokeball' src={pokeball} alt="pokeball"/> */}
                 <img title='poke logo' src={poke_logo} alt="poke_logo"/>
+                
                 <span>Pokédex</span>
               </Link>
             </li>

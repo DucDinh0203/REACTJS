@@ -19,7 +19,7 @@
 .pokemonCard-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; /* Creates three columns of equal size */
-    gap: 70px 40px; /* Optional: Adds some space between grid items */
+    gap: 70px 70px; /* Optional: Adds some space between grid items */
 
 }
 
@@ -51,6 +51,9 @@
 
 .pokemon-info{
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .pokemon-info .pokemon-id{
@@ -58,7 +61,6 @@
     font-size: 20px;
     font-weight: 400;
     padding: 0;
-    text-align: center;
 }
 
 .pokemon-info .pokemon-name{
@@ -67,14 +69,10 @@
     font-weight: 800;
     text-transform: capitalize;
     padding: 0;
-    text-align: center;
 }
 
 .pokemon-type{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    
 }
 
 .type-button {
@@ -86,6 +84,16 @@
     padding: 5px 15px;
     font-style: italic;
     color: white;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.type-button img{
+    display: block;
+    max-width: 100%;
+    width: 25px;
 }
 
 .bug {

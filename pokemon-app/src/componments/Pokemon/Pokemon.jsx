@@ -13,13 +13,13 @@ const Pokemon = (props) => {
 
     const displayPokemonType = (pokemonTypes) => {
         return pokemonTypes.map((types, index) => {
-            // const iconUrl = require(`../../asset/pokemonTypesIcons/${types.type.name}.svg`).default;
+            const iconUrl = `../../asset/pokemonTypesIcons/${types.type.name}.svg`;
             return (
                 <button 
                     key={index}
                     className={`${types.type.name} type-button`}
                 >
-                    {/* <img src={iconUrl} alt={types.type.name}/> */}
+                    <img src={iconUrl} alt={types.type.name}/>
                     {types.type.name}
                 </button>
             );
@@ -36,7 +36,9 @@ const Pokemon = (props) => {
                     <h2 className="pokemon-id"><i>{formatPokemonID(id)}</i></h2>
                     <h1 className="pokemon-name">{name}</h1>
                     <div className="pokemon-type">
-                        <div>{displayPokemonType(types)}</div>
+                        {
+                            displayPokemonType(types)
+                        }
                     </div>
                 </div>
             </div>
