@@ -18,16 +18,19 @@ const Details = () => {
             </header>
             <div className='details-container'>
                 <PokemonAvatar name={name}/>
-                <PokemonAbout name={name}/>
-                <div className='abilities-container'>
-                    <h1>Abilities</h1>
+                <div className='details-content'>
+                    <PokemonAbout name={name}/>
+                    <div className='abilities-container'>
+                        <h1>Abilities</h1>
+                    </div>
+                    <div className='stats-container'>
+                        <h1>Stats</h1>
+                    </div>
+                    <div className='evolution-container'>
+                        <h1>Evolution</h1>
+                    </div>
                 </div>
-                <div className='stats-container'>
-                    <h1>Stats</h1>
-                </div>
-                <div className='evolution-container'>
-                    <h1>Evolution</h1>
-                </div>
+                
             </div>
 
         </div>

@@ -2,46 +2,51 @@
     width: 100%;
     max-width: 1200px;
     margin: 100px auto;
+    box-shadow: 5px 5px 20px 5px var(--lggray);
+    border-radius: 15px;
 }
 
-.avatar-container .img-container{
+.avatar-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+    gap: 20px;
 }
 
-.avatar-container .img-container img {
-    margin: 50px 0px
+.avatar-container .avatar-img{
+    width: 100%;
 }
 
-.avatar-container .img-container .avatar-id{
-    padding: 10px;
+.avatar-container img {
+    display: block;
+    width: 100%;
+    margin: 40px auto;
+}
+
+.avatar-container .avatar-id{
     font-size: 100px;
     font-family: var(--mont);
     display: flex;
-    flex-direction: row;
     justify-content: center;
 }
 
-.avatar-container .img-container .avatar-id p{
+.avatar-container  .avatar-id p{
     transform: rotate(270deg);
-    font-size: 120px;
+    font-size: 100px;
     font-family: var(--mont);
+    font-style: italic;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0px;
+    /* padding: 50px 0px 0px 0px; */
+    margin: auto;
 }
 
-.avatar-container .img-container .avatar-name{
-    padding: 10px;
+.avatar-container  .avatar-name{
     font-family: var(--mont);
     display: flex;
     /* flex-direction: row; */
     justify-content: center;
 }
 
-.avatar-container .img-container .avatar-name p{
+.avatar-container .avatar-name p{
     font-size: 55px;
     font-family: var(--robo);
     font-weight: 800;
@@ -49,4 +54,18 @@
     display: flex;
     margin: auto;
     text-transform: capitalize;
+}
+
+.about-container .about-type{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container .about-type p{
+    margin: 20px 0px 20px 0px;
+}
+
+.details-content{
+    border-radius: 20px;
 }

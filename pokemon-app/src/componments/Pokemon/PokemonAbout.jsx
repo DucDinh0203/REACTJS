@@ -26,14 +26,34 @@ const PokemonAbout = (props) => {
         </div>
         )
     }
+
+    const displayPokemonType = (pokemonTypes) => {
+        return pokemonTypes.map((types, index) => {
+            const iconUrl = `../../asset/pokemonTypesIcons/${types.type.name}.svg`;
+            return (
+                <button 
+                    key={index}
+                    className={`${types.type.name} type-button`}
+                >
+                    <img src={iconUrl} alt={types.type.name}/>
+                    {types.type.name}
+                </button>
+            );
+        });
+    }
+
     return (
         <div className='about-container'>
+            <div className='about-type'>
+                <p>{displayPokemonType(data.types)}</p>
+            </div>
             <h1>About me</h1>
             <PokemonDescription name={name}/>
-            <div>
-                <p>height: {data.height} cm</p>
-                <p>weight: {data.weight} kg</p>
+            <div className='about-hw'>
+                <span>Height: {data.height/10}m</span>
+                <span>Weight: {data.weight/10}kg</span>
             </div>
+            
         </div>
     )
 }

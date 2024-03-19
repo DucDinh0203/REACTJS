@@ -33,19 +33,17 @@ const PokemonAvatar = (props) => {
     }
     
     return (
-        <div className='avatar-container'>
-            <div className={`${data.types[0].type.name} img-container`}>
-                <div className='avatar-id'>
-                    <p><i>{formatPokemonID(data.id)}</i></p>
-                </div>
-                <img className='avatar-img' src={data.sprites.other.dream_world.front_default} alt={data.name}/>
-                <div className='avatar-name'>
-                    <p>{data.name}</p>
-                </div>
+        <div className={`${data.types[0].type.name} avatar-container`}>
+            <div className='avatar-id'>
+                <p>{formatPokemonID(data.id)}</p>
             </div>
-            
+            <div className='avatar-img'>
+                <img  src={data.sprites.other.home.front_default} alt={data.name}/>
+            </div>
+            <div className='avatar-name'>
+                <p>{data.name}</p>
+            </div>
         </div>
-
     )
 }
 
