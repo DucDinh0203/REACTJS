@@ -2,6 +2,8 @@ import React from 'react'
 import FetchingPokemonData from '../../Services/FetchingPokemonData';
 import { useQuery } from "@tanstack/react-query";
 import PokemonDescription from './PokemonDescription';
+import PokemonAbilities from './PokemonAbilities';
+
 
 const PokemonAbout = (props) => {
     const {name} = props
@@ -44,16 +46,26 @@ const PokemonAbout = (props) => {
 
     return (
         <div className='about-container'>
-            <div className='about-type'>
-                <p>{displayPokemonType(data.types)}</p>
-            </div>
-            <h1>About me</h1>
             <PokemonDescription name={name}/>
             <div className='about-hw'>
-                <span>Height: {data.height/10}m</span>
-                <span>Weight: {data.weight/10}kg</span>
+                <div className='height'>
+                    <h2>Height: </h2>  
+                    <button>{data.height/10}m</button>
+                </div>
+                <div className='weight'>
+                    <h2>Weight: </h2>  
+                    <button>{data.weight/10}kg</button>
+                </div>
             </div>
-            
+            <div className='about-type'>
+                <h2>Types: </h2>
+                <div className='about-type-content'>
+                    {
+                        displayPokemonType(data.types)
+                    } 
+                </div>
+            </div>
+            <PokemonAbilities name = {name}/>            
         </div>
     )
 }

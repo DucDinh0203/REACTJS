@@ -1,9 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { useParams } from "react-router-dom";
 import HeaderComponments from '../Header/Header.componments';
 import { useQuery } from "@tanstack/react-query";
 import FetchingPokemonData from '../../Services/FetchingPokemonData';
-import axios from 'axios';
 import Pokemon from './Pokemon';
 import './Pokemon.style.css';
 
@@ -49,13 +48,8 @@ const PokemonDetails = () => {
             />
           }
         </div>
-
-        <div className='pokemonDetails-stat'>
-          
-        </div>
-
+        {/* <div className='pokemonDetails-stat'></div> */}
       </div>
-        
     </div>
   )
 }

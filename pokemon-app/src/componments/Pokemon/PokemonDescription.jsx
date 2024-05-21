@@ -26,11 +26,12 @@ const PokemonDescription = (props) => {
         )
     }
 
-    console.log(data.flavor_text_entries[0].flavor_text);
+    // console.log(data.flavor_text_entries[0].flavor_text);
 
     return (
         <div className='description-container'>
-            <p>
+            <h2>Description</h2>
+            <p className='description-content'>
                 {
                     data.flavor_text_entries[0].flavor_text
                 }
