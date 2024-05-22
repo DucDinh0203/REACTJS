@@ -4,12 +4,12 @@ import './Details.style.css';
 import HeaderComponments from '../../Componments/Header/Header.componments';
 import PokemonAvatar from '../../Componments/Pokemon/PokemonAvatar';
 import PokemonAbout from '../../Componments/Pokemon/PokemonAbout';
-import PokemonAbilities from '../../Componments/Pokemon/PokemonAbilities';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
+import PokemonStats from '../../Componments/Pokemon/PokemonStats';
 
 
 // Pokemon details outline page
@@ -32,11 +32,11 @@ const Details = () => {
                 <div className='details-content'>
                     <Box sx={{ width: '100%', typography: 'body1' }}>
                         <TabContext value={value}>
-                            <Box className="tab-heading" sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                                <TabList onChange={handleChange} aria-label="lab API tabs example">
-                                    <Tab label="About" value="1" />
-                                    <Tab label="Stats" value="2" />
-                                    <Tab label="Evolution" value="3" />
+                            <Box className="tab-heading" sx={{ borderBottom: 2, borderColor: 'divider' }}>
+                                <TabList className='tab-list' onChange={handleChange} aria-label="lab API tabs example">
+                                    <Tab className='tab-title' label="About" value="1"  />
+                                    <Tab className='tab-title' label="Stats" value="2" />
+                                    <Tab className='tab-title' label="Evolution" value="3" />
                                 </TabList>
                             </Box>
 
@@ -45,9 +45,7 @@ const Details = () => {
                             </TabPanel>
 
                             <TabPanel className='panel' value="2">
-                                <div className='stats-container'>
-                                    <h1 className='detail-sub-heading'>Stats</h1>
-                                </div>
+                                <PokemonStats name={name}/>
                             </TabPanel>
 
                             <TabPanel className='panel' value="3">

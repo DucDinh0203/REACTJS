@@ -25,7 +25,7 @@ const PokemonAbilities = (props) => {
         </div>
         )
     }
-    console.log("abilities: ",data.abilities[0].ability.name);
+
   return (
     <div className='abilities-container'>
         <h2 className='sub-heading grid-8'>Abilities</h2>

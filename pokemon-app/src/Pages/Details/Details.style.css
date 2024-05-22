@@ -69,8 +69,16 @@
     align-items: center;
 }
 
+.tab-heading .tab-list .tab-title{
+    /* color: red; */
+    font-size: 20px;
+    font-family: var(--plpn);
+    font-weight: bold;
+    
+}
+
 .details-container .details-content .panel{
-    padding: 20px 100px;
+    padding: 20px 120px;
     width: 100%;
     margin: auto;
 }
@@ -102,10 +110,6 @@
     
 }
 
-.about-hw div {
-    /* margin: 0px 40px; */
-}
-
 .about-container .about-type .about-type-content {
     display: flex;
     justify-content: left;
@@ -125,7 +129,7 @@
 .grid-table {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 50px;
 }
 
 .about-container .about-type .about-type-content .grid-7{
