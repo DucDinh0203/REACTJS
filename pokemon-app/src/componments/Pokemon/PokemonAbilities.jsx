@@ -28,10 +28,10 @@ const PokemonAbilities = (props) => {
     console.log("abilities: ",data.abilities[0].ability.name);
   return (
     <div className='abilities-container'>
-        <h2 className='detail-sub-heading'>Abilities</h2>
+        <h2 className='sub-heading grid-8'>Abilities</h2>
         <div className='abilities-content'>
-            <button>{data.abilities[0].ability.name}</button>
-            <button>{data.abilities[1].ability.name}</button>
+            <button className='about-num grid-9'>{data.abilities[0].ability.name}</button>
+            <button className='about-num grid-10'>{data.abilities[1].ability.name}</button>
         </div>
     </div>
   )

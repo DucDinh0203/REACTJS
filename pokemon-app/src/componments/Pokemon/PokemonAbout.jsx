@@ -35,7 +35,7 @@ const PokemonAbout = (props) => {
             return (
                 <button 
                     key={index}
-                    className={`${types.type.name} type-button`}
+                    className={`${types.type.name} type-button grid-${index+6}`}
                 >
                     <img src={iconUrl} alt={types.type.name}/>
                     {types.type.name}
@@ -45,20 +45,20 @@ const PokemonAbout = (props) => {
     }
 
     return (
-        <div className='about-container'>
+        <div className='about-container grid-table'>
             <PokemonDescription name={name}/>
             <div className='about-hw'>
-                <div className='height'>
-                    <h2>Height: </h2>  
-                    <button>{data.height/10}m</button>
+                <div className='height grid-3'>
+                    <h2 className='sub-heading'>Height: </h2>  
+                    <button className='about-num'>{data.height/10}m</button>
                 </div>
-                <div className='weight'>
-                    <h2>Weight: </h2>  
-                    <button>{data.weight/10}kg</button>
+                <div className='weight grid-4'>
+                    <h2 className='sub-heading'>Weight: </h2>  
+                    <button className='about-num'>{data.weight/10}kg</button>
                 </div>
             </div>
             <div className='about-type'>
-                <h2>Types: </h2>
+                <h2 className='sub-heading grid-5'>Types: </h2>
                 <div className='about-type-content'>
                     {
                         displayPokemonType(data.types)

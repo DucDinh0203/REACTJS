@@ -40,17 +40,17 @@ const Details = () => {
                                 </TabList>
                             </Box>
 
-                            <TabPanel value="1">
+                            <TabPanel className='panel' value="1">
                                 <PokemonAbout name={name}/>
                             </TabPanel>
 
-                            <TabPanel value="2">
+                            <TabPanel className='panel' value="2">
                                 <div className='stats-container'>
                                     <h1 className='detail-sub-heading'>Stats</h1>
                                 </div>
                             </TabPanel>
 
-                            <TabPanel value="3">
+                            <TabPanel className='panel' value="3">
                                 <div className='evolution-container'>
                                     <h1 className='detail-sub-heading'>Evolution</h1>
                                 </div>

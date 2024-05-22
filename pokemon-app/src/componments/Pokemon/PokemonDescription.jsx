@@ -30,11 +30,11 @@ const PokemonDescription = (props) => {
 
     return (
         <div className='description-container'>
-            <h2>Description</h2>
-            <p className='description-content'>
-                {
+            <h2 className='sub-heading grid-1'>Description</h2>
+            <p className='description-content grid-2'>
+                "{
                     data.flavor_text_entries[0].flavor_text
-                }
+                }"
             </p>
         </div>
     )
