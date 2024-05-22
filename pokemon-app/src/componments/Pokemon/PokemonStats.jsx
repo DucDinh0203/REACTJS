@@ -29,8 +29,15 @@ const PokemonStats = (props) => {
     const displayPokemonStats = (PokemonStats) => {
         return PokemonStats.map((stats, index) => {
             return (
-                <div className={`stats-${index}`} key={index}>
-                        {stats.stat.name}:   {stats.base_stat}
+                <div className={`stats-wrapper stats-${index}`} key={index}>
+                        <div className='stats-name'>{stats.stat.name}:</div>   
+                        <div className='bar'> 
+                            <div 
+                                className='bar-active'
+                                style={{width: stats.base_stat}}
+                            ></div>
+                        </div> 
+                        <div className='stat-num'>{stats.base_stat}</div>
                 </div>
             );
         });

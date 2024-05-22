@@ -26,15 +26,29 @@ const PokemonAbilities = (props) => {
         )
     }
 
-  return (
-    <div className='abilities-container'>
-        <h2 className='sub-heading grid-8'>Abilities</h2>
-        <div className='abilities-content'>
-            <button className='about-num grid-9'>{data.abilities[0].ability.name}</button>
-            <button className='about-num grid-10'>{data.abilities[1].ability.name}</button>
+    const displayPokemonAbilities = (pokemonAbilities) => {
+        return pokemonAbilities.map((abilities, index) => {
+            return (
+                <button
+                    key={index}
+                    className={`about-num ability-${index}`}
+                >
+                    {abilities.ability.name}
+                </button>
+            );
+        })
+    }
+
+    return (
+        <div className='abilities-container'>
+            <h2 className='sub-heading grid-8'>Abilities</h2>
+            <div className='abilities-content'>
+                {
+                    displayPokemonAbilities(data.abilities)
+                }
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default PokemonAbilities

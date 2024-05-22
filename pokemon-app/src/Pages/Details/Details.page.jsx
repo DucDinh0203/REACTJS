@@ -10,6 +10,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import PokemonStats from '../../Componments/Pokemon/PokemonStats';
+import PokemonEvolution from '../../Componments/Pokemon/PokemonEvolution';
 
 
 // Pokemon details outline page
@@ -49,9 +50,7 @@ const Details = () => {
                             </TabPanel>
 
                             <TabPanel className='panel' value="3">
-                                <div className='evolution-container'>
-                                    <h1 className='detail-sub-heading'>Evolution</h1>
-                                </div>
+                                <PokemonEvolution name={name}/>
                             </TabPanel>
 
                         </TabContext>
