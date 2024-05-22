@@ -178,7 +178,7 @@
     /* left: 0; */
     background-color: #11ff00;
     border-radius: 30px;
-    animation: fillStatBar 2s linear;
+    animation: fillStatBar 0.5s linear;
 }
 
 @keyframes fillStatBar {

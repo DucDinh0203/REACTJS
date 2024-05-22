@@ -35,7 +35,7 @@ const PokeDex = () => {
             <Stack>
                 <Pagination 
                     className='pagination'
-                    count={80} 
+                    count={100} 
                     variant="outlined" 
                     shape="rounded"
                     onChange={handleChange}
