@@ -133,7 +133,7 @@
 .grid-table {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    gap: 20px;
 }
 
 .about-container .about-type .about-type-content .grid-7{

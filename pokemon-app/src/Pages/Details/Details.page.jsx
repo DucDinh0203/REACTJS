@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useParams } from "react-router-dom";
 import './Details.style.css';
 import HeaderComponments from '../../Componments/Header/Header.componments';
@@ -11,17 +11,40 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import PokemonStats from '../../Componments/Pokemon/PokemonStats';
 import PokemonEvolution from '../../Componments/Pokemon/PokemonEvolution';
-
+import FetchingPokemonData from '../../Services/FetchingPokemonData';
+import { useQuery } from "@tanstack/react-query";
 
 // Pokemon details outline page
 const Details = () => {
     const { name } = useParams();
-
-    const [value, setValue] = React.useState('1');
+    const [value, setValue] = useState('1');
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    const {data, error, isLoading, isError} = useQuery({
+        queryKey: ["PokemonDetails", name], 
+        queryFn: FetchingPokemonData
+    });
+
+    if (isLoading) {
+        return (
+        <div>
+            Loadinggg...
+        </div>
+        );
+    }
+
+    if (isError) {
+        return (
+        <div>
+            Error: {error.message}
+        </div>
+        )
+    }
+
+    console.log('printing ID from PokemonDetails: ', data.id);
 
     return (
         <div className='details'>
@@ -50,7 +73,7 @@ const Details = () => {
                             </TabPanel>
 
                             <TabPanel className='panel' value="3">
-                                <PokemonEvolution name={name}/>
+                                <PokemonEvolution id={data.id}/>
                             </TabPanel>
 
                         </TabContext>

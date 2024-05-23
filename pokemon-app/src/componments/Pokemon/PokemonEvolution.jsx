@@ -1,13 +1,13 @@
 import React from 'react';
-import FetchingPokemonData from '../../Services/FetchingPokemonData';
 import { useQuery } from "@tanstack/react-query";
+import FetchingPokemonEvolution from '../../Services/FetchingPokemonEvolution';
 
 const PokemonEvolution = (props) => {
-    const {name} = props;
+    const {id} = props;
 
     const {data, error, isLoading, isError} = useQuery({
-        queryKey: ["PokemonDetails", name], 
-        queryFn: FetchingPokemonData
+        queryKey: ["PokemonDetails", id], 
+        queryFn: FetchingPokemonEvolution
     });
 
     if (isLoading) {
@@ -25,6 +25,8 @@ const PokemonEvolution = (props) => {
         </div>
         )
     }
+
+    console.log("Pokemon evolutions: ", data.chain);
 
     return (
         <div className='evolution-container'>
