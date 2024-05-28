@@ -18,33 +18,7 @@ import { useQuery } from "@tanstack/react-query";
 const Details = () => {
     const { name } = useParams();
     const [value, setValue] = useState('1');
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-
-    const {data, error, isLoading, isError} = useQuery({
-        queryKey: ["PokemonDetails", name], 
-        queryFn: FetchingPokemonData
-    });
-
-    if (isLoading) {
-        return (
-        <div>
-            Loadinggg...
-        </div>
-        );
-    }
-
-    if (isError) {
-        return (
-        <div>
-            Error: {error.message}
-        </div>
-        )
-    }
-
-    console.log('printing ID from PokemonDetails: ', data.id);
+    const handleChange = (event, newValue) => {setValue(newValue)};
 
     return (
         <div className='details'>
@@ -73,7 +47,7 @@ const Details = () => {
                             </TabPanel>
 
                             <TabPanel className='panel' value="3">
-                                <PokemonEvolution id={data.id}/>
+                                <PokemonEvolution name={name}/>
                             </TabPanel>
 
                         </TabContext>

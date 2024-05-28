@@ -18,13 +18,3 @@ const FetchPokemonList = async (page) => {
 }
 
 export default FetchPokemonList;
-
-// const FetchingPokemonLists = async ({queryKey}) => {
-//     const {offset} = queryKey[1];
-//     const res = await axios.get(
-//         `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=9`
-//     );
-//     return res.data;
-// };
-
-// export default FetchingPokemonLists;
