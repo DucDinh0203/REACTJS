@@ -8,21 +8,46 @@ const MovieList = ({ title, movies, onAddToWatchList, onAddToWatchedList }) => {
     <div className="movie-list">
       <h2>{title}</h2>
       <div className="movie-items">
-        {movies.map(movie => (
+        {movies?.map(movie => (
           <div className="movie-item" key={movie.id}>
             {/* Todo: Display the movie poster */}
+            <img
+              src={`${IMAGE_BASE_URL}${movie.poster_path}`}
+              alt={movie.title}
+              className="movie-poster"
+            />
             <div className="movie-details">
               {/* Todo: Display the movie title */}
-              
+              <h3>{movie.title}</h3>
               {/* Todo: Display more movie details if needed */}
+              
             </div>
             <div className="movie-actions">
               {/* Todo: Add functionality to add movie to watch list */}
               
+                {onAddToWatchList && <button
+                  className="btn-movie-action"
+                  onClick={() => {
+                    onAddToWatchList(movie);
+                  }}
+                >
+                  Add to Watch List
+                </button>
+                }
+                {onAddToWatchedList && (
+                <button
+                  className="btn-movie-action"
+                  onClick={() => onAddToWatchedList(movie)}
+                >
+                  Mark as Watched
+                </button>
+              )}
               {/* Todo: Add functionality to mark movie as watched */}
               
               {/* Todo: Link to the movie details page */}
-              
+              <Link to={`/movie/${movie.id}`}>
+                <button className="btn-movie-action">Movie Details</button>
+              </Link>
             </div>
           </div>
         ))}

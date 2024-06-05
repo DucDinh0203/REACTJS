@@ -17,19 +17,46 @@ const App = () => {
   const [filteredMovies, setFilteredMovies] = useState([]);
 
   useEffect(() => {
-    // Fetch movie data here
+    const fetchData = async () => {
+      try{
+        const response = await fetch(`${API_URL}/popular?api_key=${API_KEY}&language=en-US&page=1`);
+        // const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=7dff8e7516b05a4328e4c3d22465229b&language=en-US&page=1`);
+        const data = await response.json();
+        setMovies(data);
+      } catch (error) {
+        console.error("Error fetching movies:", error);
+      }
+    };
+
+    fetchData();
   }, []);
+
+  // console.log(movies);
 
   useEffect(() => {
     setFilteredMovies(movies);
   }, [movies]);
 
   const addToWatchList = (movie) => {
-    // Handle add movie to watch list
+    const isDuplicate = watchList.some((item) => item.id === movie.id);
+    if(!isDuplicate) {
+      setWatchList([...watchList, movie]);
+    } else {
+      alert("this movie is already in the watch list");
+    }    
   };
+
+  console.log(watchList);
 
   const addToWatchedList = (movie) => {
     // Handle add movie from watch list to watched list
+    const isDuplicate = watchedList.some((item) => item.id === movie.id);
+    if (!isDuplicate) {
+      setWatchedList([...watchedList, movie]);
+      setWatchList(watchList.filter((m) => m.id !== movie.id));
+    } else {
+      console.log("This movie is already in the watch list");
+    }
   };
 
   const handleSearch = (query) => {
