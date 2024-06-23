@@ -5,6 +5,8 @@ const SearchBar = ({ onSearch }) => {
 
   const handleChange = (event) => {
     // Handle change in input tag
+    setQuery(event.target.value);
+    onSearch(query);
   };
 
   return (

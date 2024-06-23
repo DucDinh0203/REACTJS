@@ -26,9 +26,13 @@ const Pokemon = (props) => {
         });
     }
     
+    const catchPokemon = () => {
+        alert(`Are you sure you want to catch this ${name}?`);
+    }
+    
     return (
-        <Link to={`/details/${name}`} className="pokemon-link">
-            <div className="pokemon-container">
+        <div className="pokemon-container">
+            <Link to={`/details/${name}`} className="pokemon-link">
                 <div className="image-container">
                     <img src={ImgUrl} alt={name}/>
                 </div>
@@ -41,8 +45,15 @@ const Pokemon = (props) => {
                         }
                     </div>
                 </div>
+            </Link>
+            <div>
+                <button 
+                    className="pokemon-catchbutton"
+                    onClick={() => catchPokemon()}
+                >catch 'em</button>
             </div>
-        </Link>
+        </div>
+        
     );
 };
 

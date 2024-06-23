@@ -10,6 +10,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+    border-radius: 15px 15px 0px 0px;
 }
 
 .avatar-container .avatar-img{

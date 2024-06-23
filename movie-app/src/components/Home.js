@@ -5,7 +5,7 @@ const Home = ({ movies, watchList, watchedList, addToWatchList, addToWatchedList
   // console.log('Movies from home', movies.results);
   return (
     <div className="home">
-      <MovieList title="Movie" movies={movies.results} onAddToWatchList={addToWatchList} />
+      <MovieList title="Movie" movies={movies} onAddToWatchList={addToWatchList} />
       <MovieList title="Watch List" movies={watchList} onAddToWatchedList={addToWatchedList} />
       <MovieList title="Watched List" movies={watchedList} />
     </div>

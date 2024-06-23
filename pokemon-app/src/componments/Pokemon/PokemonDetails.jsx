@@ -32,9 +32,9 @@ const PokemonDetails = () => {
 
   return (
     <div className='pokemon-details'>
-      <header>
+      {/* <header>
         <HeaderComponments/>
-      </header>
+      </header> */}
       <div className='details-container'>
         <div className='pokemonDetails-card'>
           {

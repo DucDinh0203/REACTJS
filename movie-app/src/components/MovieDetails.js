@@ -9,7 +9,17 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    // Fetch data by movie Id here
+    const fetchMovieDetails = async () => {
+      try {
+        const response = await fetch(`${API_URL}/${id}?api_key=${API_KEY}`);
+        const data = await response.json();
+        setMovie(data);
+      } catch (error) {
+        console.error('Error fetching movie details:', error);
+      }
+    };
+
+    fetchMovieDetails();
   }, [id]);
 
   if (!movie) {

@@ -11,8 +11,6 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import PokemonStats from '../../Componments/Pokemon/PokemonStats';
 import PokemonEvolution from '../../Componments/Pokemon/PokemonEvolution';
-import FetchingPokemonData from '../../Services/FetchingPokemonData';
-import { useQuery } from "@tanstack/react-query";
 
 // Pokemon details outline page
 const Details = () => {
@@ -26,6 +24,7 @@ const Details = () => {
                 <HeaderComponments/>
             </header>
             <div className='details-container'>
+                {/* <button>GO BACK</button> */}
                 <PokemonAvatar name={name}/>
                 <div className='details-content'>
                     <Box sx={{ width: '100%', typography: 'body1' }}>

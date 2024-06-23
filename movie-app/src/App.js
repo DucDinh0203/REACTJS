@@ -22,7 +22,7 @@ const App = () => {
         const response = await fetch(`${API_URL}/popular?api_key=${API_KEY}&language=en-US&page=1`);
         // const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=7dff8e7516b05a4328e4c3d22465229b&language=en-US&page=1`);
         const data = await response.json();
-        setMovies(data);
+        setMovies(data.results);
       } catch (error) {
         console.error("Error fetching movies:", error);
       }
@@ -61,6 +61,14 @@ const App = () => {
 
   const handleSearch = (query) => {
     // Handle search function here
+    if (!query) {
+      setFilteredMovies(movies);
+    } else {
+      const filtered = movies.filter((movie) =>
+        movie.title.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredMovies(filtered);
+    }
   };
 
   return (

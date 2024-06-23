@@ -1,9 +1,11 @@
 import React from 'react';
 import FetchingPokemonData from '../../Services/FetchingPokemonData';
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 
 const PokemonAvatar = (props) => {
     const {name} = props;
+    const navigate = useNavigate();
 
     const formatPokemonID = (idNum) => {
         if (idNum <10) return `#00${idNum}`;
@@ -34,6 +36,9 @@ const PokemonAvatar = (props) => {
     
     return (
         <div className={`${data.types[0].type.name} avatar-container`}>
+            <button
+                onClick={() => navigate(-1)}
+            >Go back</button>
             <div className='avatar-id'>
                 <p>{formatPokemonID(data.id)}</p>
             </div>
