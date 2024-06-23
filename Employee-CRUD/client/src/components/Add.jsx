@@ -8,7 +8,13 @@ const Add = () => {
   const [employee, setEmployee] = useState({});
 
   // Function to handle input changes
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setEmployee((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
@@ -18,7 +24,11 @@ const Add = () => {
       await axios.post("/employees/add", employee);
       toast.success("Employee added successfully!");
       // TODO: Reset form fields after successful submission
-      setEmployee({});
+      setEmployee({
+        name: "",
+        position: "",
+        department: "",
+        });
       // TODO: Redirect to homepage after successful submission
     } catch (error) {
       toast.error("Failed to add employee. Please try again.");
@@ -34,9 +44,26 @@ const Add = () => {
         name="name"
         value={employee.name} //name is columns of table Employee in the collection
         onChange={handleChange}
+        className="form-input"
+      />
+      <input
+        type="text"
+        placeholder="Position"
+        name="position"
+        value={employee.position} //name is columns of table Employee in the collection
+        onChange={handleChange}
+        className="form-input"
+      />
+      <input
+        type="text"
+        placeholder="Department"
+        name="department"
+        value={employee.department} //name is columns of table Employee in the collection
+        onChange={handleChange}
+        className="form-input"
       />
       {/* Type more input fields for employee data here*/}
-      <button type="submit">Add Employee</button>
+      <button type="submit" className="form-button">Add Employee</button>
     </form>
   );
 };
