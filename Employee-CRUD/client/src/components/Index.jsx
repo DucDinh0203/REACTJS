@@ -45,7 +45,7 @@ const Index = () => {
                       <button>
                         <Link 
                           to={`/edit/${employee._id}`}
-                          style={{color: "#000", textDecoration: "none"}}
+                          style={{color: "blue", textDecoration: "none"}}
                         >
                           Edit
                         </Link>
@@ -56,7 +56,7 @@ const Index = () => {
                       <button>
                         <Link 
                           to={`/delete/${employee._id}`}
-                          style={{color: "#000", textDecoration: "none"}}
+                          style={{color: "red", textDecoration: "none"}}
                         >
                           Delete
                         </Link>
