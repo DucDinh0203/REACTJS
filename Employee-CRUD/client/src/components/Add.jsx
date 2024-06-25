@@ -17,8 +17,9 @@ const Add = () => {
   };
 
   // Function to handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    console.log("handleSubmit");
+    // e.preventDefault();
     try {
       // TODO: Send a POST request to add employee
       await axios.post("/employees/add", employee);

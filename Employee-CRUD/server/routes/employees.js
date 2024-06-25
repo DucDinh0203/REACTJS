@@ -28,12 +28,24 @@ router.route('/:id').get((req, res) => {
 
 // Route to delete an employee by ID
 router.route('/:id').delete((req, res) => {
-
+  Employee.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Employee has been deleted successfully!"))
+    .catch((err) => res.status(400).json('Error: ' + err));
 });
 
 // Route to update an employee by ID
 router.route('/update/:id').post((req, res) => {
+  Employee.findByIdAndUpdate(req.params.id)
+    .then(employee => {
+      employee.name = req.body.name;
+      employee.position = req.body.position;
+      employee.department = req.body.department;
 
+      employee.save()
+      .then(() => res.json("Employee has been updated!"))
+      .catch(err => res.status(400).json("Error: " + err));
+    })
+    .catch(err => res.status(400).json("Error: " + err));
 });
 
 module.exports = router;
